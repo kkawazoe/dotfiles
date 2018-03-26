@@ -6,6 +6,7 @@ export ORACLE_HOME=~/bin/sqlplus/instantclient_12_1
 export PATH=$ORACLE_HOME:$PATH
 export DYLD_LIBRARY_PATH=~/bin/sqlplus/instantclient_12_1
 export NLS_LANG=Japanese_Japan.AL32UTF8
+export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 
 # excel git diff
 export GOPATH=$HOME/.go
@@ -13,7 +14,6 @@ export GOPATH=$HOME/.go
 # anyenv
 export PATH="$HOME/.anyenv/bin:$PATH"
 eval "$(anyenv init -)"
-
 
 # 色を使用出来るようにする
 autoload -Uz colors
@@ -104,6 +104,10 @@ setopt extended_glob
 bindkey '^R' history-incremental-pattern-search-backward
 
 ########################################
+# タイトルバーに「一つ上のディレクトリ名」/「カレントディレクトリ名」を表示する
+echo -ne "\033]0;$(pwd | rev | awk -F \/ '{print "/"$1"/"$2}'| rev)\007"
+
+function chpwd() { echo -ne "\033]0;$(pwd | rev | awk -F \/ '{print "/"$1"/"$2}'| rev)\007"}
+
+########################################
 # エイリアス
-
-
