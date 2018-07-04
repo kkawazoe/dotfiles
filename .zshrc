@@ -6,7 +6,9 @@ export ORACLE_HOME=~/bin/sqlplus/instantclient_12_1
 export PATH=$ORACLE_HOME:$PATH
 export DYLD_LIBRARY_PATH=~/bin/sqlplus/instantclient_12_1
 export NLS_LANG=Japanese_Japan.AL32UTF8
-export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+export PATH="/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/usr/local/bin:/usr/local/sbin:/$PATH"
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # excel git diff
 export GOPATH=$HOME/.go
@@ -51,6 +53,7 @@ zstyle ':completion:*:processes' command 'ps x -o pid,s,args'
 # vcs_info
 autoload -Uz vcs_info
 autoload -Uz add-zsh-hook
+autoload -Uz compinit && compinit
 
 zstyle ':vcs_info:*' formats '%F{green}(%s)-[%b]%f'
 zstyle ':vcs_info:*' actionformats '%F{red}(%s)-[%b|%a]%f'
@@ -73,9 +76,6 @@ setopt no_beep
 setopt auto_cd
 function chpwd() { ls }
 
-# '#' 以降をコメントとして扱う
-setopt interactive_comments
-
 # cd したら自動的にpushdする
 setopt auto_pushd
 
@@ -93,9 +93,6 @@ setopt hist_ignore_space
 
 # ヒストリに保存するときに余分なスペースを削除する
 setopt hist_reduce_blanks
-
-# 高機能なワイルドカード展開を使用する
-setopt extended_glob
 
 ########################################
 # キーバインド
