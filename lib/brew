@@ -65,8 +65,6 @@ run_brew() {
     local -a missing_formulae=()
     local -a desired_formulae=(
       'ccleaner'
-      'dash'
-      'dashlane'
       'dropbox'
       'firefox'
       'franz'
