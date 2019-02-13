@@ -88,7 +88,7 @@ initialize() {
       fi
       ;;
     *)
-      echo $(tput setaf 1)Working only OSX / Ubuntu!!$(tput sgr0)
+      echo $(tput setaf 1)Working only OSX!!$(tput sgr0)
       exit 1
       ;;
   esac
