@@ -72,9 +72,51 @@ setopt print_eight_bit
 # beep を無効にする
 setopt no_beep
 
-#cdとlsの省略
+#cdの省略
 setopt auto_cd
-function chpwd() { ls }
+
+#lsの省略(ファイル数が多い場合は省略表示する)
+chpwd() {
+    ls_abbrev
+}
+
+ls_abbrev() {
+    if [[ ! -r $PWD ]]; then
+        return
+    fi
+
+    # -a : Do not ignore entries starting with ..
+    # -C : Force multi-column output.
+    # -F : Append indicator (one of */=>@|) to entries.
+    local cmd_ls='ls'
+    local -a opt_ls
+    opt_ls=('-aCF' '--color=always')
+
+    case "${OSTYPE}" in
+        freebsd*|darwin*)
+            if type gls > /dev/null 2>&1; then
+                cmd_ls='gls'
+            else
+                # -G : Enable colorized output.
+                opt_ls=('-aCFG')
+            fi
+            ;;
+    esac
+
+    local ls_result
+    ls_result=$(CLICOLOR_FORCE=1 COLUMNS=$COLUMNS command $cmd_ls ${opt_ls[@]} | sed $'/^\e\[[0-9;]*m$/d')
+
+    local ls_lines=$(echo "$ls_result" | wc -l | tr -d ' ')
+
+    if [ $ls_lines -gt 10 ]; then
+        echo "$ls_result" | head -n 5
+        echo '...'
+        echo "$ls_result" | tail -n 5
+        echo "$(command ls -1 -A | wc -l | tr -d ' ') files exist"
+    else
+        echo "$ls_result"
+    fi
+}
 
 # cd したら自動的にpushdする
 setopt auto_pushd
@@ -103,8 +145,6 @@ bindkey '^R' history-incremental-pattern-search-backward
 ########################################
 # タイトルバーに「一つ上のディレクトリ名」/「カレントディレクトリ名」を表示する
 echo -ne "\033]0;$(pwd | rev | awk -F \/ '{print "/"$1"/"$2}'| rev)\007"
-
-function chpwd() { echo -ne "\033]0;$(pwd | rev | awk -F \/ '{print "/"$1"/"$2}'| rev)\007"}
 
 ########################################
 # エイリアス
