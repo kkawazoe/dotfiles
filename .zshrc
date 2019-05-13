@@ -9,6 +9,7 @@ export NLS_LANG=Japanese_Japan.AL32UTF8
 export PATH="/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH="/usr/local/bin:/usr/local/sbin:/$PATH"
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # excel git diff
 export GOPATH=$HOME/.go
@@ -156,3 +157,5 @@ alias dcu='docker-compose up'
 alias dcd='docker-compose down'
 alias dcrm='docker-compose run --rm'
 
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
