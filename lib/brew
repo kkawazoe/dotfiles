@@ -18,6 +18,7 @@ run_brew() {
     local list_formulae
     local -a missing_formulae
     local -a desired_formulae=(
+      'anyenv'
       'autoconf'
       'fontforge'
       'gettext'
@@ -98,6 +99,8 @@ run_brew() {
 
       [[ $? ]] && echo "$(tput setaf 2)Installed missing formulae ✔︎$(tput sgr0)"
     fi
+
+    anyenv install --init
 
     echo "Cleanup Homebrew..."
     brew cleanup
