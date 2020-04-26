@@ -1,21 +1,22 @@
 [user]
-	name = kkawazoe
-	email = feike1@live.jp
+  name = kkawazoe
+  email = feike1@live.jp
 [core]
-	quotepath = false
-	attributesfile = /Users/k-kawazoe/.gitattributes
-	ignorecase = false
+  quotepath = false
+  attributesfile = /Users/k-kawazoe/.gitattributes
+  ignorecase = false
+  editor = vim
 [diff "xlsx"]
-    binary = true
-    textconv = $GOPATH/bin/git-xlsx-textconv
+  binary = true
+  textconv = $GOPATH/bin/git-xlsx-textconv
 [push]
-	default = simple
+  default = simple
 [alias]
-    ad = add -A
-    cm = commit
-    ch = checkout
-    chb = checkout -b
-    df = diff
-    sths = stash save -u
-    sth = stash -u
-    sts = status
+  ad = add -A
+  cm = commit
+  ch = checkout
+  chb = checkout -b
+  df = diff
+  sths = stash save -u
+  sth = stash -u
+  sts = status
