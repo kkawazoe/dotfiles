@@ -12,7 +12,7 @@ run_brew() {
     brew update && brew upgrade
     [[ $? ]] && echo "$(tput setaf 2)Update Homebrew complete. ✔︎$(tput sgr0)"
 
-    brew tap 'caskroom/cask'
+    brew tap 'homerew/cask'
     brew tap 'sanemat/font'
 
     local list_formulae
