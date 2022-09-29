@@ -97,6 +97,7 @@ initialize() {
 
   if [ ! -d ${HOME}/.anyenv ]; then
     git clone https://github.com/anyenv/anyenv ~/.anyenv
+    anyenv install --init
     anyenv install rbenv
     anyenv install ndenv
     exec $SHELL -l
