@@ -78,7 +78,7 @@ link_files() {
 initialize() {
   case ${OSTYPE} in
     darwin*)
-      run_brew
+      #run_brew
 
       if [ ! -e ~/Library/Fonts/Cica-Regular.ttf ]; then
         wget https://github.com/miiton/Cica/releases/download/v4.1.1/Cica-v4.1.1.zip
