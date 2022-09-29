@@ -93,7 +93,7 @@ initialize() {
       ;;
   esac
 
-  [ ${SHELL} != "/bin/zsh"  ] && chsh -s /bin/zsh
+#   [ ${SHELL} != "/bin/zsh"  ] && chsh -s /bin/zsh
 
   if [ ! -d ${HOME}/.anyenv ]; then
     git clone https://github.com/riywo/anyenv ~/.anyenv
