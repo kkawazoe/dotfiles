@@ -80,12 +80,12 @@ initialize() {
     darwin*)
       #run_brew
 
-      if [ ! -e ~/Library/Fonts/Cica-Regular.ttf ]; then
-        wget https://github.com/miiton/Cica/releases/download/v4.1.1/Cica-v4.1.1.zip
-        unar Cica-v4.1.1.zip
-        cp -f Cica-v4.1.1/Cica*.ttf ${HOME}/Library/Fonts/
-        rm -rf Cica-v4.1.1*
-      fi
+#       if [ ! -e ~/Library/Fonts/Cica-Regular.ttf ]; then
+#         wget https://github.com/miiton/Cica/releases/download/v4.1.1/Cica-v4.1.1.zip
+#         unar Cica-v4.1.1.zip
+#         cp -f Cica-v4.1.1/Cica*.ttf ${HOME}/Library/Fonts/
+#         rm -rf Cica-v4.1.1*
+#       fi
       ;;
     *)
       echo $(tput setaf 1)Working only OSX!!$(tput sgr0)
