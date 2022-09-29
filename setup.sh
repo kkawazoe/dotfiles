@@ -99,7 +99,7 @@ initialize() {
     git clone https://github.com/anyenv/anyenv ~/.anyenv
     anyenv install --init
     anyenv install rbenv
-    anyenv install ndenv
+    anyenv install nodenv
     exec $SHELL -l
   fi
 
