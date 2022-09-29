@@ -96,7 +96,7 @@ initialize() {
 #   [ ${SHELL} != "/bin/zsh"  ] && chsh -s /bin/zsh
 
   if [ ! -d ${HOME}/.anyenv ]; then
-    git clone https://github.com/riywo/anyenv ~/.anyenv
+    git clone https://github.com/anyenv/anyenv ~/.anyenv
     anyenv install rbenv
     anyenv install ndenv
     exec $SHELL -l
