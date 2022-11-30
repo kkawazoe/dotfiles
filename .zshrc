@@ -145,7 +145,10 @@ bindkey '^R' history-incremental-pattern-search-backward
 
 ########################################
 # タイトルバーに「一つ上のディレクトリ名」/「カレントディレクトリ名」を表示する
-echo -ne "\033]0;$(pwd | rev | awk -F \/ '{print "/"$1"/"$2}'| rev)\007"
+precmd() {
+    local str="\033]0;$(pwd | rev | awk -F \/ '{print "/"$1"/"$2}'| rev)\007"
+    eval 'ls -a;echo -ne ${str}'
+}
 
 ########################################
 # エイリアス
