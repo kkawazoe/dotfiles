@@ -156,6 +156,7 @@ alias dcb='docker-compose build'
 alias dcu='docker-compose up'
 alias dcd='docker-compose down'
 alias dcrm='docker-compose run --rm'
+alias dce='docker-compose exec'
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init - zsh)"
