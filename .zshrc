@@ -167,3 +167,5 @@ export PATH="/opt/homebrew/opt/openssl@3/bin:$PATH"
 
 export LDFLAGS="-L/opt/homebrew/opt/openssl@3/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/openssl@3/include"
+
+export PATH="$PATH:/opt/homebrew/opt/mysql@5.7/bin"
