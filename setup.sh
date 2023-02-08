@@ -55,7 +55,6 @@ if [ ! -d ${DOT_DIRECTORY} ]; then
 fi
 
 cd ${DOT_DIRECTORY}
-source ./lib/brew
 
 # シンボリックリンク作成
 link_files() {
@@ -76,25 +75,6 @@ link_files() {
 
 # 初期化
 initialize() {
-  case ${OSTYPE} in
-    darwin*)
-      #run_brew
-
-#       if [ ! -e ~/Library/Fonts/Cica-Regular.ttf ]; then
-#         wget https://github.com/miiton/Cica/releases/download/v4.1.1/Cica-v4.1.1.zip
-#         unar Cica-v4.1.1.zip
-#         cp -f Cica-v4.1.1/Cica*.ttf ${HOME}/Library/Fonts/
-#         rm -rf Cica-v4.1.1*
-#       fi
-      ;;
-    *)
-      echo $(tput setaf 1)Working only OSX!!$(tput sgr0)
-      exit 1
-      ;;
-  esac
-
-#   [ ${SHELL} != "/bin/zsh"  ] && chsh -s /bin/zsh
-
   if [ ! -d ${HOME}/.anyenv ]; then
     git clone https://github.com/anyenv/anyenv ~/.anyenv
     anyenv install --init
