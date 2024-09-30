@@ -11,6 +11,8 @@ export PATH="/usr/local/bin:/usr/local/sbin:/$PATH"
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 eval $(/opt/homebrew/bin/brew shellenv)
+export PATH="$HOME/.amplify/bin:$PATH"
+export PATH="$PATH:/opt/local/bin"
 
 # excel git diff
 export GOPATH=$HOME/.go
@@ -158,9 +160,6 @@ alias dcd='docker-compose down'
 alias dcrm='docker-compose run --rm'
 alias dce='docker-compose exec'
 
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init - zsh)"
-
 export PATH="$HOME/.nodenv/bin:$PATH"
 eval "$(nodenv init -)"
 export PATH="/opt/homebrew/opt/openssl@3/bin:$PATH"
@@ -169,3 +168,33 @@ export LDFLAGS="-L/opt/homebrew/opt/openssl@3/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/openssl@3/include"
 
 export PATH="$PATH:/opt/homebrew/opt/mysql@5.7/bin"
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/kazuki_kawazoe/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+export GIT_PAGER="LESSCHARSET=utf-8 less"
+
+export GOENV_ROOT="$HOME/.goenv"
+export PATH="$GOENV_ROOT/bin:$PATH"
+eval "$(goenv init -)"
+export PATH="$GOROOT/bin:$PATH"
+export PATH="$GOPATH/bin:$PATH"
+
+# Added by Amplify CLI binary installer
+export PATH="$HOME/.amplify/bin:$PATH"
+
+alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+eval "$(direnv hook zsh)"
+
+autoload -U +X bashcompinit && bashcompinit
+
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
