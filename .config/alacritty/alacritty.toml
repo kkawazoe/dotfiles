@@ -1,0 +1,26 @@
+import = [
+  "~/.config/alacritty/themes/themes/pastel_dark.toml" # theme
+]
+
+[env]
+TERM = "xterm-256color"
+
+[window]
+padding.x = 10
+padding.y = 10
+decorations = "Full"
+opacity = 0.9 # 透過率
+blur = false
+option_as_alt = "Both"
+
+[font]
+normal.family = "HackGen35 Console NF" # Font Family を指定
+size = 16
+
+[shell]
+program = "/bin/zsh"
+args = [
+  "-l",
+  "-c",
+  "/opt/homebrew/bin/zellij attach --index 0 --create",
+]
