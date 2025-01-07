@@ -75,14 +75,6 @@ link_files() {
 
 # 初期化
 initialize() {
-  if [ ! -d ${HOME}/.anyenv ]; then
-    git clone https://github.com/anyenv/anyenv ~/.anyenv
-    anyenv install --init
-    anyenv install rbenv
-    anyenv install nodenv
-    exec $SHELL -l
-  fi
-
   set +e
   if has "rbenv"; then
     [ ! -d $(rbenv root)/plugins/rbenv-default-gems ] && git clone -q https://github.com/rbenv/rbenv-default-gems.git $(rbenv root)/plugins/rbenv-default-gems

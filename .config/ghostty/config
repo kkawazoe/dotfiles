@@ -1,0 +1,24 @@
+theme = iTerm2 Default
+
+font-family = HackGen35 Console NF
+font-size = 16
+
+macos-non-native-fullscreen = true
+macos-titlebar-proxy-icon = hidden
+macos-titlebar-style = tabs
+
+window-padding-x = 20
+window-padding-y = 20
+
+# クイックターミナルの位置を画面下部に設定
+quick-terminal-position = "bottom"
+
+# クイックターミナルを表示するスクリーンを設定 (メインスクリーン)
+quick-terminal-screen = "main"
+
+# アニメーション時間を設定（0で即時表示）
+quick-terminal-animation-duration = 0
+
+# グローバルホットキーを設定
+keybind = "global:ctrl+cmd+`=toggle_quick_terminal"
+

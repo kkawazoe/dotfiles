@@ -192,9 +192,8 @@ eval "$(pyenv init -)"
 eval "$(direnv hook zsh)"
 
 autoload -U +X bashcompinit && bashcompinit
-
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
-
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+export PATH="/opt/homebrew/opt/zip/bin:$PATH"
